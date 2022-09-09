@@ -1,1 +1,1 @@
-class Normal(name: String, sellIn: Int, quality: Int) : Item(name, sellIn, quality)
+class Normal(name: String, sellIn: Int, quality: Int) : ShopItem(name, sellIn, quality)

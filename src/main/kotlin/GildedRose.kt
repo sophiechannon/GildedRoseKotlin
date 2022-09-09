@@ -1,8 +1,8 @@
-class GildedRose(var items: Array<Item>) {
+class GildedRose(var items: Array<ShopItem>) {
 
     fun updateQuality() {
         for (item in items) {
-            if (item !is Sulfuras) {item.sellIn -= 1}
+            item.updateSellIn()
         }
     }
 

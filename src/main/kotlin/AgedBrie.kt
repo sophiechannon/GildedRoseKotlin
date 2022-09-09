@@ -1,1 +1,1 @@
-class AgedBrie(name: String, sellIn: Int, quality: Int) : Item(name, sellIn, quality)
+class AgedBrie(name: String, sellIn: Int, quality: Int) : ShopItem(name, sellIn, quality)
