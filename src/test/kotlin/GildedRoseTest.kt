@@ -4,12 +4,13 @@ import kotlin.test.DefaultAsserter.assertEquals
 internal class GildedRoseTest {
 
     @Test
-    fun foo() {
-        val items = arrayOf<Item>(Item("foo", 0, 0))
+    fun testNormalItemsSellInDate() {
+        val items = arrayOf<Item>(Item("foo", 10, 10))
         val app = GildedRose(items)
         app.updateQuality()
-        assertEquals("returns name", app.items[0].name, "foo")
-
+        assertEquals("normal item sell in", app.items[0].sellIn, 9)
     }
+
+
 
 }
