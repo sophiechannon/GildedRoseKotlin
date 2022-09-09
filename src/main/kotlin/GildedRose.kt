@@ -1,5 +1,4 @@
-class GildedRose(var items: Array<ShopItem>) {
-
+class GildedRose(var items: MutableList<ShopItem>) {
     fun updateQuality() {
         for (item in items) {
             item.updateSellIn()
@@ -7,4 +6,7 @@ class GildedRose(var items: Array<ShopItem>) {
         }
     }
 
+    fun add(item: ShopItem) {
+        items.add(item)
+    }
 }
