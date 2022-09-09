@@ -29,4 +29,11 @@ class NormalTest {
         normal.updateQuality()
         assertEquals("normal item degrade 2", normal.quality, 0)
     }
+
+    @Test
+    fun testNormalItemsQuality0AfterSellIn() {
+        val normal = Normal("foo", -1, 1)
+        normal.updateQuality()
+        assertEquals("normal item degrade 2", normal.quality, 0)
+    }
 }
