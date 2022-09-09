@@ -35,6 +35,30 @@ internal class GildedRoseTest {
         assertEquals("Sulfuras item sell in", app.items[0].sellIn, 10)
     }
 
+    @Test
+    fun testNormalItemsQualityPreSellIn() {
+        val items = arrayOf<Item>(Item("foo", 10, 10))
+        val app = GildedRose(items)
+        app.updateQuality()
+        assertEquals("normal item degrade 1", app.items[0].quality, 9)
+    }
+
+    @Test
+    fun testNormalItemsQualityPostSellIn() {
+        val items = arrayOf<Item>(Item("foo", 0, 10))
+        val app = GildedRose(items)
+        app.updateQuality()
+        assertEquals("normal item degrade 2", app.items[0].quality, 8)
+    }
+
+    @Test
+    fun testNormalItemsQuality0() {
+        val items = arrayOf<Item>(Item("foo", 10, 0))
+        val app = GildedRose(items)
+        app.updateQuality()
+        assertEquals("normal item degrade 2", app.items[0].quality, 0)
+    }
+
 
 
 }
