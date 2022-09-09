@@ -11,7 +11,7 @@ never over 50
 ### Aged brie:
 increases in value by 1
 never over 50
-continues improving after SellIn date
+continues improving double after SellIn date
 
 ### Backstage pass:
 increases in value by 1
