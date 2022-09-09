@@ -4,7 +4,8 @@ import kotlin.test.DefaultAsserter.assertEquals
 class SulfurasTest {
     @Test
     fun testSulfurasClass() {
-        val normal = Sulfuras("crazy mad shit", 10, 10)
-        assertEquals("sulfuras class works", normal.toString(), "crazy mad shit, 10, 10")
+        val sulfuras = Sulfuras("crazy mad shit", 10, 10)
+        sulfuras.updateSellIn()
+        assertEquals("sulfuras class works", sulfuras.sellIn,  10)
     }
 }

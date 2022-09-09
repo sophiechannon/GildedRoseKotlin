@@ -3,8 +3,9 @@ import kotlin.test.DefaultAsserter.assertEquals
 
 class AgedBrieTest {
     @Test
-    fun testAgedBrieClass() {
-        val normal = AgedBrie("st michel de pompeepoo", 10, 10)
-        assertEquals("aged brie class works", normal.toString(), "st michel de pompeepoo, 10, 10")
+    fun testAgedBrieClassSellIn() {
+        val cheese = AgedBrie("st michel de pompeepoo", 10, 10)
+        cheese.updateSellIn()
+        assertEquals("updates", cheese.sellIn, 9)
     }
 }

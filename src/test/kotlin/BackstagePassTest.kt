@@ -3,8 +3,9 @@ import kotlin.test.DefaultAsserter.assertEquals
 
 class BackstagePassTest {
     @Test
-    fun testBackstagePassClass() {
-        val normal = BackstagePass("backstage pass: cradle of filth", 10, 10)
-        assertEquals("backstage pass class works", normal.toString(), "backstage pass: cradle of filth, 10, 10")
+    fun testBackstagePassClassSellIn() {
+        val pass = BackstagePass("cradle of filth", 10, 10)
+        pass.updateSellIn()
+        assertEquals("updates", pass.sellIn, 9)
     }
 }

@@ -4,64 +4,22 @@ import kotlin.test.DefaultAsserter.assertEquals
 internal class GildedRoseTest {
 
     @Test
-    fun testNormalItemsSellInDate() {
-        val items = arrayOf<ShopItem>(Normal("foo", 10, 10))
+    fun testItemsAreAdded() {
+        val normal = Normal("foo", 10, 10)
+        val sulfuras = Sulfuras("weird thing", 10, 10)
+        val pass = BackstagePass("westlife", 10, 10)
+        val cheese = AgedBrie("gross cheese", 10, 10)
+        val items = arrayOf<ShopItem>(normal, cheese, pass, sulfuras)
         val app = GildedRose(items)
-        app.updateQuality()
-        assertEquals("normal item sell in", app.items[0].sellIn, 9)
+        assertEquals("normal item", app.items[0].name, "foo")
+        assertEquals("aged brie item", app.items[1].name, "gross cheese")
+        assertEquals("backstage pass item", app.items[2].name, "westlife")
+        assertEquals("normal item", app.items[3].name, "weird thing")
     }
 
-    @Test
-    fun testAgedBrieItemsSellInDate() {
-        val items = arrayOf<ShopItem>(AgedBrie("Aged Brie", 10, 10))
-        val app = GildedRose(items)
-        app.updateQuality()
-        assertEquals("Aged Brie item sell in", app.items[0].sellIn, 9)
-    }
-
-    @Test
-    fun testBackStagePassItemsSellInDate() {
-        val items = arrayOf<ShopItem>(BackstagePass("Backstage passes to a TAFKAL80ETC concert", 10, 10))
-        val app = GildedRose(items)
-        app.updateQuality()
-        assertEquals("Backstage Pass item sell in", app.items[0].sellIn, 9)
-    }
-
-    @Test
-    fun testSulfurasItemsSellInDate() {
-        val items = arrayOf<ShopItem>(Sulfuras("Sulfuras, Hand of Ragnaros", 10, 10))
-        val app = GildedRose(items)
-        app.updateQuality()
-        assertEquals("Sulfuras item sell in", app.items[0].sellIn, 10)
-    }
-//
-//    @Test
-//    fun testNormalItemsQualityPreSellIn() {
-//        val items = arrayOf<Item>(Item("foo", 10, 10))
-//        val app = GildedRose(items)
-//        app.updateQuality()
-//        assertEquals("normal item degrade 1", app.items[0].quality, 9)
-//    }
-//
-//    @Test
-//    fun testNormalItemsQualityPostSellIn() {
-//        val items = arrayOf<Item>(Item("foo", 0, 10))
-//        val app = GildedRose(items)
-//        app.updateQuality()
-//        assertEquals("normal item degrade 2", app.items[0].quality, 8)
-//    }
-//
-//    @Test
-//    fun testNormalItemsQuality0() {
-//        val items = arrayOf<Item>(Item("foo", 10, 0))
-//        val app = GildedRose(items)
-//        app.updateQuality()
-//        assertEquals("normal item degrade 2", app.items[0].quality, 0)
-//    }
-//
 //    @Test
 //    fun testAgedBrieItemsQualityPreSellIn() {
-//        val items = arrayOf<Item>(Item("Aged Brie", 10, 10))
+//        val items = arrayOf<ShopItem>(AgedBrie("Aged Brie", 10, 10))
 //        val app = GildedRose(items)
 //        app.updateQuality()
 //        assertEquals("aged brie item improve 1", app.items[0].quality, 11)
